@@ -4,35 +4,27 @@ import { useParams } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Operatingtime from './Operatingtime';
 import Review from './Review';
+import { useSelector } from 'react-redux';
+
 
 
 
 function Restview() {
 
-  const [restList,setRest]=useState([])
-
-    //api creation
-    const getData=async()=>{
-    const result=await fetch('/restaurants.json')
-    //asyncronous aanu so json convert to js
-    result.json().then(data=>setRest(data.restaurants))
-    }
     
   //object create for useparams
 const params=useParams()
 console.log(params.id);
 
+const {restList}=useSelector(state=>state.reducer1)
+
 //find single rstaurant dqata
 const singleRest=restList.find(i=>i.id==params.id)
 console.log(singleRest);
 
-    //userEffects work 2or3 times so 2 arrays forms stop cheyan aanu []
-    useEffect(()=>{
-        getData()
-    },[])
+useEffect(()=>{
 
-
-
+},[])
 
   return (
  <div>

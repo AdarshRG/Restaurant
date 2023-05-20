@@ -12,7 +12,7 @@ function Operatingtime({workingTime}) {
   return (
     <div>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        Working Time
       </Button>
 
       <Modal

@@ -61,4 +61,12 @@ redux stores a js store file-to store all data
 
 Redux-libraries
 react-redux
-redux-thunk
+redux-thunk           npm i redux react-redux redux-thunk(in the same terminal)
+
+
+axios
+------
+used to call api in react
+npm i axios
+
+useSelector-hook used to access data from store

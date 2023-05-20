@@ -5,22 +5,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Restaurant.css'
 import { Link } from 'react-router-dom';
+import { getRestaurants } from './actions/restAction';
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 
 function Restaurant() {
-    const [restList,setRest]=useState([])
+    const dispatch=useDispatch()
 
-    //api creation
-    const getData=async()=>{
-    const result=await fetch('/restaurants.json')
-    //asyncronous aanu so json convert to js
-    result.json().then(data=>setRest(data.restaurants))
-    }
-    console.log(restList);
-    //userEffects work 2 or3 times so 2 arrays forms stop cheyan aanu []
     useEffect(()=>{
-        getData()
+        dispatch(getRestaurants)
     },[])
+const {restList}=useSelector(state=>state.reducer1)
+console.log(restList);
 
   return (
     <Row className='ms-5 mb-2 p-2' >
